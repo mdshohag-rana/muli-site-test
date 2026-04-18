@@ -1,0 +1,13 @@
+venv/
+pycache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+build/
+\dist/
+artifacts/
+allure-results/
+.pytest_cache/

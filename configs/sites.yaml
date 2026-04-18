@@ -1,0 +1,30 @@
+sites:
+  - name: rbo
+    base_url: https://www.rentbyowner.com
+  
+  - name: rboca
+    base_url: https://www.rentbyowner.ca
+
+  - name: htl
+    base_url: https://www.hotala.com
+
+  - name: bv
+    base_url: https://www.bedroomvillas.com
+  
+  - name: bvca
+    base_url: https://www.bedroomvillas.ca
+  
+  - name: bvau
+    base_url: https://www.bedroomvillas.com.au
+  
+  - name: bvuk
+    base_url: https://www.bedroomvillas.co.uk
+
+  - name: vc
+    base_url: https://www.vacationcottage.com
+
+  - name: cbn
+    base_url: https://www.cabinns.com
+  
+  - name: cbnca
+    base_url: https://www.cabinns.ca

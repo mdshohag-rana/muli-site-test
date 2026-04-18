@@ -1,0 +1,45 @@
+name: Nightly Playwright Tests
+
+on:
+  schedule:
+    - cron: "0 1 * * *"  # every day at 7:00 PM UTC
+  workflow_dispatch:        # manual run button
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps
+
+      - name: 🧪 Run tests
+        run: |
+          pytest -n auto --alluredir=allure-results
+
+      - name: 📊 Generate Allure report
+        run: |
+          npm install -g allure-commandline --save-dev
+          allure generate allure-results -o allure-report
+
+      - name: 📤 Upload Allure report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: 📤 Upload Playwright artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts
+          path: artifacts
