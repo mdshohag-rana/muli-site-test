@@ -2,7 +2,7 @@ name: Nightly Playwright Tests
 
 on:
   schedule:
-    - cron: "0 1 * * *"  # every day at 7:00 PM UTC
+    - cron: "*/10 * * * *"  # every day at 7:00 PM UTC
   workflow_dispatch:        # manual run button
 
 jobs:
