@@ -2,6 +2,7 @@ pytest
 pytest-playwright
 playwright
 allure-pytest
+pytest-xdist
+PyYAML
 setuptools
 wheel
-pytest-xdist
